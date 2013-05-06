@@ -1,0 +1,34 @@
+import net.thucydides.core.reports.html.HtmlAggregateStoryReporter
+
+
+buildscript {
+	apply from: "${rootProject.projectDir}/libraries.gradle"	
+	rootProject.ext.thucydidesOutputDirectory = "${rootProject.buildDir}/reports/thucydides"    
+	
+	repositories {  
+        mavenCentral()	
+        dependencies { classpath libraries.'thucydides-core' }
+    }
+	
+		
+}
+
+test.doFirst {
+	systemProperty 'thucydides.outputDirectory', thucydidesOutputDirectory
+}
+
+test.doLast {
+	aggregateThucydidesReports()
+}
+	
+def aggregateThucydidesReports() {	
+	def reportsDir = new File(thucydidesOutputDirectory)		
+			
+	if (!reportsDir.exists()) {
+        reportsDir.mkdirs();
+    }
+		
+	def reporter = new HtmlAggregateStoryReporter(Project.name)
+	reporter.outputDirectory = reportsDir
+	reporter.generateReportsForTestResultsFrom(reportsDir)				
+}	

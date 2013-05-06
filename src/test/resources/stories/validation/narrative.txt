@@ -1,0 +1,6 @@
+Validation capability
+
+Narrative:
+As a user
+I want to be able to run validation checks on content
+In order to ensure content quality

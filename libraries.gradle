@@ -1,0 +1,7 @@
+ext.libraries = [       
+        'groovy-all-indy':              "org.codehaus.groovy:groovy-all:2.1.1",
+        'fest-assert':                  "org.easytesting:fest-assert:1.4",    
+        'mockito-all':                  "org.mockito:mockito-all:1.9.5", 
+        'thucydides-core':				"net.thucydides:thucydides-core:0.9.104",
+        'thucydides-jbehave':			"net.thucydides:thucydides-jbehave-plugin:0.9.104"
+]

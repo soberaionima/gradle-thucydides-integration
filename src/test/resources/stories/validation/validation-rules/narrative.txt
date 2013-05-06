@@ -1,0 +1,6 @@
+Validation Rules feature
+
+Narrative:
+As a user
+I want to be able to run a separate business rule check on content
+In order to ensure content quality
